@@ -20,7 +20,7 @@ import java.util.List;
 
 public class GoogleBooksAPIUtils {
     private static final String BASE_URL = "https://www.googleapis.com/books/v1/volumes?q=";
-    private static final String API_KEY = "AIzaSyCofDk-wzXr7a2r1_bTiOHKWxEFl8qlAg4";
+    private static final String API_KEY = "YOUR_API_KEY";
     private static byte[] placeholderImageBytes;
 
     static {
