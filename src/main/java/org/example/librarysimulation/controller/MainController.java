@@ -256,7 +256,7 @@ public class MainController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("About");
         alert.setHeaderText("Book Library Management");
-        alert.setContentText("Version 1.0\nDeveloped by Your Name.");
+        alert.setContentText("Version 1.0\nDeveloped by Zakaria Farih.\n© 2024 with love.");
         alert.showAndWait();
     }
 
