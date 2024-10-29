@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.librarysimulation.controller.MainController"
+            stylesheets="@../styles/styles.css">
+
+    <!-- Top Navigation Bar -->
+    <top>
+        <VBox>
+            <MenuBar styleClass="menu-bar">
+                <Menu text="File">
+                    <MenuItem text="Exit" onAction="#handleExit"/>
+                </Menu>
+                <Menu text="View">
+                    <MenuItem text="All Books" onAction="#handleViewAllBooks"/>
+                    <MenuItem text="Favorites" onAction="#handleViewFavorites"/>
+                    <MenuItem text="Intending to Read" onAction="#handleViewIntendingToRead"/>
+                    <MenuItem text="Favorites and Intending to Read" onAction="#handleViewFavoritesAndIntendingToRead"/>
+                </Menu>
+                <Menu text="Help">
+                    <MenuItem text="About" onAction="#handleAbout"/>
+                </Menu>
+            </MenuBar>
+
+            <!-- Mode Toggle -->
+            <HBox alignment="CENTER_RIGHT" style="-fx-padding: 10;" spacing="10">
+                <Label text="Offline Mode:"/>
+                <ToggleButton fx:id="offlineToggle" text="OFF" onAction="#handleToggleOffline"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Main Content Area -->
+    <center>
+        <VBox style="-fx-spacing: 20; -fx-padding: 20;">
+
+            <!-- Search and Filter Pane -->
+            <HBox style="-fx-spacing: 15; -fx-alignment: CENTER_LEFT;">
+                <!-- HBox for Icon and Search Field -->
+                <HBox style="-fx-alignment: CENTER_LEFT; -fx-spacing: 5;" alignment="CENTER_LEFT">
+                    <ImageView fitHeight="24" fitWidth="24" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/search-icon.png"/>
+                        </image>
+                    </ImageView>
+                    <JFXTextField fx:id="searchField" promptText="Search for books..." HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <JFXComboBox fx:id="genreComboBox" promptText="Genre" prefWidth="150"/>
+                <JFXComboBox fx:id="yearComboBox" promptText="Year" prefWidth="100"/>
+                <JFXButton text="Search" styleClass="jfx-button-primary" onAction="#handleSearch"/>
+            </HBox>
+
+            <!-- SplitPane for Book List and Details -->
+            <SplitPane orientation="HORIZONTAL" dividerPositions="0.3">
+                <!-- Book List View -->
+                <ScrollPane fitToWidth="true" fitToHeight="true">
+                    <VBox fx:id="bookListView" style="-fx-spacing: 15; -fx-padding: 10;"/>
+                </ScrollPane>
+
+                <!-- Book Details Pane -->
+                <VBox fx:id="bookDetailsPane" style="-fx-spacing: 15; -fx-padding: 20;" alignment="TOP_LEFT">
+                    <ImageView fx:id="bookCoverImage" fitWidth="200" preserveRatio="true" />
+                    <Label fx:id="bookTitle" styleClass="book-title"/>
+                    <Label fx:id="bookAuthor" styleClass="book-author"/>
+                    <Label fx:id="bookPublishedDate" styleClass="book-published-date"/>
+                    <Label fx:id="bookPublisher" styleClass="book-publisher"/>
+                    <TextArea fx:id="bookDescription" editable="false" wrapText="true" prefRowCount="10" styleClass="book-description"/>
+
+                    <!-- Reading Progress -->
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Current Page:"/>
+                        <JFXTextField fx:id="currentPageField" promptText="Enter page number" prefWidth="100"/>
+                        <JFXButton text="Update" styleClass="jfx-button-secondary" onAction="#handleUpdatePage"/>
+                    </HBox>
+
+                    <!-- Favorites and Intending to Read -->
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <JFXButton fx:id="favoriteButtonDetails" text="☆ Favorite" styleClass="jfx-button-secondary" onAction="#handleFavoriteDetails"/>
+                        <JFXButton fx:id="intendingToReadButtonDetails" text="📖 Intend to Read" styleClass="jfx-button-secondary" onAction="#handleIntendingToReadDetails"/>
+                    </HBox>
+
+                    <!-- Notes Section -->
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <JFXButton fx:id="addNoteButtonDetails" text="📝 Add Note" styleClass="jfx-button-secondary" onAction="#handleAddNoteDetails"/>
+                        <JFXButton fx:id="viewNotesButton" text="📄 View Notes" styleClass="jfx-button-secondary" onAction="#handleViewNotes"/>
+                    </HBox>
+                </VBox>
+            </SplitPane>
+        </VBox>
+    </center>
+
+</BorderPane>

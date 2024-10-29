@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Pos?>
+
+<HBox xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.librarysimulation.controller.BookItemController"
+      style="-fx-spacing: 15; -fx-padding: 10;" styleClass="book-item" stylesheets="@../styles/styles.css"
+      alignment="CENTER_LEFT">
+
+    <!-- Book Cover Image -->
+    <ImageView fx:id="coverImageView" fitWidth="50" fitHeight="75" preserveRatio="true"/>
+
+    <!-- Book Details -->
+    <VBox style="-fx-spacing: 5;" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+        <Label fx:id="titleLabel" styleClass="book-item-title"/>
+        <Label fx:id="authorLabel" styleClass="book-item-author"/>
+    </VBox>
+
+    <!-- Action Buttons -->
+    <HBox style="-fx-spacing: 10;" alignment="CENTER_RIGHT">
+        <JFXButton fx:id="favoriteButton" text="☆ Favorite" styleClass="jfx-button-secondary" onAction="#handleFavorite"/>
+        <JFXButton fx:id="intendingToReadButton" text="📖 Intend to Read" styleClass="jfx-button-secondary" onAction="#handleIntendingToRead"/>
+        <JFXButton fx:id="addNoteButton" text="📝 Add Note" styleClass="jfx-button-secondary" onAction="#handleAddNote"/>
+        <JFXButton text="View" styleClass="jfx-button-primary" onAction="#handleView"/>
+    </HBox>
+
+</HBox>

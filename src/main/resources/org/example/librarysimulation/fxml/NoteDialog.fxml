@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.ButtonType?>
+<DialogPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.librarysimulation.controller.NoteDialogController">
+    <content>
+        <GridPane hgap="10" vgap="10" style="-fx-padding: 20;">
+            <Label text="Book:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label fx:id="bookTitleLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Page Number:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <JFXTextField fx:id="pageNumberField" promptText="Enter page number" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Note:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <JFXTextArea fx:id="noteTextArea" promptText="Enter your note here..." prefRowCount="4" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        </GridPane>
+    </content>
+    <buttonTypes>
+        <ButtonType text="Cancel" buttonData="CANCEL_CLOSE"/>
+        <ButtonType text="OK" buttonData="OK_DONE"/>
+    </buttonTypes>
+</DialogPane>
