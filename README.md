@@ -28,16 +28,14 @@
 ---
 
 ## 📸 Screenshots
+![java_8ChWNboy32](https://github.com/user-attachments/assets/777400cb-53e7-4db2-8dfe-e8f53c7360c3)
+![java_ez2aTVcZs2](https://github.com/user-attachments/assets/f2257526-c336-4a60-828c-f387dc656a31)
+![java_RZHiqEWVuK](https://github.com/user-attachments/assets/43f9aa96-829a-4ead-b9b0-e23f87da5338)
+![java_npwN8N87kO](https://github.com/user-attachments/assets/6fcfe14a-e497-4c0f-ad4a-228a6e138a32)
+![java_mGDpOJCbfQ](https://github.com/user-attachments/assets/4b65936e-80d9-4998-9bfe-8d032e75f6fb)
+![Nc9EI7eiq4](https://github.com/user-attachments/assets/42906387-d43e-4445-b379-6f6889f36bf9)
+![java_vP3GZif3zi](https://github.com/user-attachments/assets/e2f88fd6-b09f-4337-8fdc-1b92dea75d1d)
 
-<!-- 
-**Add screenshots of your application here. Replace the placeholders with actual images.**
-
-![Main Interface](path/to/main_interface.png)
-![Book Details](path/to/book_details.png)
-![Add Note](path/to/add_note.png)
--->
-
-*Please add screenshots of the application's main interface, book details view, add note dialog, and any other significant features to showcase the user interface and functionality.*
 
 ---
 
